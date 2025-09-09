@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playground - Responsive Website</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-toggle" id="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <div class="nav-logo">
+                <svg width="211" height="28" viewBox="0 0 211 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g clip-path="url(#clip0_4974_109315)">
+                        <path d="M-0.000680534 13.924C-0.0187012 16.6972 0.7864 19.4133 2.31272 21.7287C3.83904 24.0441 6.01797 25.8547 8.57372 26.9312C11.1295 28.0077 13.9471 28.3019 16.6701 27.7763C19.3931 27.2508 21.8989 25.9293 23.8705 23.979C25.8421 22.0287 27.1908 19.5373 27.7458 16.8202C28.3009 14.1031 28.0374 11.2824 26.9887 8.71512C25.94 6.14783 24.1532 3.94938 21.8545 2.39801C19.5558 0.846634 16.8485 0.0120899 14.0753 0H14.0145C10.3156 0.00786769 6.76916 1.4745 4.14513 4.08146C1.52109 6.68842 0.0313361 10.2252 -0.000680534 13.924V13.924Z" fill="#E21E2D"/>
+                        <path d="M18.9097 22.163H9.12032C8.74942 22.163 8.39371 22.0156 8.13145 21.7533C7.86918 21.4911 7.72184 21.1354 7.72184 20.7645V15.0185H6.53617C6.25536 15.0244 5.97929 14.9456 5.7439 14.7924C5.50851 14.6391 5.32472 14.4186 5.21646 14.1594C5.1082 13.9002 5.08048 13.6145 5.13693 13.3393C5.19337 13.0642 5.33136 12.8124 5.53292 12.6168L13.0117 5.10758C13.2828 4.851 13.6418 4.70801 14.015 4.70801C14.3882 4.70801 14.7472 4.851 15.0183 5.10758L22.4667 12.6168C22.6616 12.812 22.7945 13.0604 22.8486 13.3309C22.9027 13.6014 22.8756 13.8818 22.7707 14.1369C22.6722 14.3959 22.4974 14.6188 22.2693 14.7763C22.0413 14.9337 21.7709 15.0182 21.4938 15.0185H20.3082V20.7645C20.3004 21.1329 20.1506 21.4842 19.89 21.7448C19.6294 22.0054 19.2781 22.1552 18.9097 22.163V22.163ZM14.015 5.92843H13.863L6.41457 13.4681C6.38589 13.4945 6.36505 13.5284 6.35432 13.5659C6.3436 13.6035 6.3434 13.6432 6.35376 13.6809C6.37253 13.714 6.39881 13.7423 6.43049 13.7634C6.46217 13.7845 6.49837 13.7979 6.53617 13.8025H8.32987C8.49114 13.8025 8.64579 13.8665 8.75982 13.9806C8.87385 14.0946 8.93791 14.2493 8.93791 14.4105V20.7645C8.93791 20.8129 8.95713 20.8593 8.99134 20.8935C9.02554 20.9277 9.07194 20.9469 9.12032 20.9469H18.9097C18.9581 20.9469 19.0045 20.9277 19.0387 20.8935C19.0729 20.8593 19.0921 20.8129 19.0921 20.7645V14.4105C19.0921 14.2493 19.1561 14.0946 19.2702 13.9806C19.3842 13.8665 19.5389 13.8025 19.7001 13.8025H21.4938C21.527 13.7958 21.5581 13.7812 21.5845 13.7601C21.611 13.7389 21.632 13.7118 21.6458 13.6809C21.664 13.6468 21.6708 13.6078 21.6653 13.5695C21.6598 13.5313 21.6424 13.4957 21.6154 13.4681L14.1366 5.95883L14.015 5.92843Z" fill="white"/>
+                        <path d="M39.4923 8.36035V11.5221H38.2762C36.9082 11.5221 35.9353 12.495 35.9353 14.2279V20.369H32.9863V8.63397H35.9353V10.3365C36.5737 8.96839 37.6682 8.36035 38.8843 8.36035H39.4923Z" fill="#3D3B40"/>
+                        <path d="M51.0447 15.1703H42.745C42.9274 17.2377 44.0219 18.1497 45.542 18.1497C47.062 18.1497 47.9437 17.5113 48.5517 15.9L51.0447 16.812C50.1326 19.457 48.0349 20.6427 45.6636 20.6427C42.1978 20.6427 39.7656 18.1801 39.7656 14.5015C39.7656 10.8229 42.137 8.36035 45.5116 8.36035C48.8862 8.36035 51.0447 10.8229 51.0447 14.4711V15.1703ZM42.8362 13.1638H48.0653C47.7613 11.4917 46.8188 10.7317 45.5116 10.7317C44.2043 10.7317 43.1706 11.5221 42.8362 13.1638Z" fill="#3D3B40"/>
+                        <path d="M62.8101 12.9814V20.369H60.0739V19.2442C59.3443 20.1866 58.1586 20.6427 56.6081 20.6427C53.872 20.6427 52.0479 19.2746 52.0479 16.964C52.0479 14.6535 53.9328 13.3158 56.7905 13.3158C58.1586 13.3158 59.1619 13.7111 59.8611 14.3495V13.2854C59.8611 11.7045 58.949 10.9749 57.429 10.9749C55.9089 10.9749 55.24 11.6741 54.8144 12.8598L52.3519 11.8261C53.1423 9.33321 55.2096 8.36035 57.5202 8.36035C60.3475 8.36035 62.8101 9.81963 62.8101 12.9814ZM59.9219 16.964C59.9219 15.9608 58.949 15.3832 57.5202 15.3832C56.0913 15.3832 55.088 15.9608 55.088 16.964C55.088 17.9673 56.0609 18.5145 57.5202 18.5145C58.9794 18.5145 59.9219 17.9673 59.9219 16.964Z" fill="#3D3B40"/>
+                        <path d="M68.1306 20.3691C65.9721 20.3691 64.7256 19.0618 64.7256 16.9033V4.4082H67.6746V16.7209C67.6746 17.4505 68.009 17.8458 68.7082 17.8458H69.5595V20.3691H68.1306Z" fill="#3D3B40"/>
+                        <path d="M81.3551 15.1703H73.0858C73.2682 17.2377 74.3627 18.1497 75.8524 18.1497C77.3421 18.1497 78.2541 17.5113 78.8621 15.9L81.3551 16.812C80.443 19.457 78.3757 20.6427 75.974 20.6427C72.5082 20.6427 70.1064 18.1801 70.1064 14.5015C70.1064 10.8229 72.4778 8.36035 75.8524 8.36035C79.227 8.36035 81.3855 10.8229 81.3855 14.4711C81.3905 14.7046 81.3804 14.9382 81.3551 15.1703V15.1703ZM73.177 13.1638H78.4061C78.0717 11.4917 77.1292 10.7317 75.8524 10.7317C74.5755 10.7317 73.481 11.5221 73.177 13.1638Z" fill="#3D3B40"/>
+                        <path d="M82.2676 16.7512L84.6389 15.9912C84.9733 17.5417 86.159 18.2713 87.6487 18.2713C89.1384 18.2713 89.8072 17.8457 89.8072 17.1465C89.8072 16.4472 89.1688 16.1736 87.7095 15.8088L86.5542 15.5352C83.8485 14.8663 82.6932 13.7111 82.6932 11.887C82.6932 10.0628 84.5477 8.36035 87.4055 8.36035C90.2632 8.36035 92.1785 9.78923 92.4826 12.1606L90.0504 12.799C89.8072 11.3397 88.7127 10.7621 87.4055 10.7621C86.0982 10.7621 85.4902 11.2181 85.4902 11.7957C85.4902 12.3734 86.3414 12.799 87.7399 13.1638L88.8952 13.4374C91.3577 14.0455 92.6042 15.2311 92.6042 16.9944C92.6042 18.7577 90.6281 20.6427 87.6487 20.6427C85.1557 20.6427 82.906 19.457 82.2676 16.7512Z" fill="#3D3B40"/>
+                        <path d="M100.66 10.9754H98.0458V16.1437C98.0458 17.2686 98.5018 17.8462 99.4139 17.8462H100.66V20.3695H99.0491C96.5561 20.3695 95.0969 18.7886 95.0969 16.2957V10.9754H92.9688V8.63446H95.0969V6.38473L98.0458 4.77344V8.63446H100.66V10.9754Z" fill="#3D3B40"/>
+                        <path d="M112.152 12.9814V20.369H109.416V19.2442C108.716 20.1866 107.5 20.6427 105.95 20.6427C103.214 20.6427 101.42 19.2746 101.42 16.964C101.42 14.6535 103.305 13.3158 106.163 13.3158C107.5 13.3158 108.534 13.7111 109.233 14.3495V13.2854C109.233 11.7045 108.321 10.9749 106.771 10.9749C106.188 10.9571 105.616 11.1322 105.143 11.4731C104.67 11.814 104.323 12.3014 104.156 12.8598L101.724 11.8261C102.514 9.33321 104.582 8.36035 106.892 8.36035C109.72 8.36035 112.152 9.81963 112.152 12.9814ZM109.294 16.964C109.294 15.9608 108.321 15.3832 106.862 15.3832C105.403 15.3832 104.46 15.9608 104.46 16.964C104.46 17.9673 105.433 18.5145 106.862 18.5145C108.291 18.5145 109.294 17.9673 109.294 16.964V16.964Z" fill="#3D3B40"/>
+                        <path d="M120.634 10.9754H118.019V16.1437C118.019 17.2686 118.476 17.8462 119.388 17.8462H120.634V20.3695H119.023C116.499 20.3695 115.071 18.7886 115.071 16.2957V10.9754H112.942V8.63446H115.071V6.38473L118.019 4.77344V8.63446H120.634V10.9754Z" fill="#3D3B40"/>
+                        <path d="M132.551 15.1703H124.282C124.465 17.2377 125.559 18.1497 127.079 18.1497C128.599 18.1497 129.481 17.5113 130.089 15.9L132.551 16.812C131.639 19.457 129.572 20.6427 127.17 20.6427C123.704 20.6427 121.303 18.1801 121.303 14.5015C121.303 10.8229 123.674 8.36035 127.049 8.36035C130.423 8.36035 132.582 10.8229 132.582 14.4711C132.587 14.7046 132.577 14.9382 132.551 15.1703V15.1703ZM124.373 13.1638H129.602C129.268 11.4917 128.356 10.7317 127.049 10.7317C125.741 10.7317 124.708 11.5221 124.373 13.1638Z" fill="#3D3B40"/>
+                        <path d="M133.616 18.6668C133.622 18.2833 133.741 17.9102 133.958 17.5942C134.176 17.2783 134.481 17.0336 134.837 16.891C135.194 16.7484 135.584 16.7142 135.959 16.7926C136.335 16.8711 136.678 17.0588 136.947 17.3321C137.217 17.6053 137.399 17.9521 137.472 18.3286C137.544 18.7052 137.504 19.0949 137.356 19.4486C137.208 19.8024 136.958 20.1045 136.639 20.317C136.32 20.5295 135.945 20.6428 135.561 20.6429C135.301 20.6516 135.041 20.6062 134.799 20.5096C134.557 20.413 134.338 20.2672 134.155 20.0815C133.972 19.8958 133.83 19.6742 133.737 19.4307C133.644 19.1872 133.603 18.9271 133.616 18.6668V18.6668Z" fill="#3D3B40"/>
+                        <path d="M138.479 14.5015C138.479 10.8229 141.033 8.36035 144.377 8.36035C146.962 8.36035 149.211 9.66763 149.971 12.5254L147.387 13.4678C146.81 11.6741 145.867 10.9749 144.377 10.9749C142.888 10.9749 141.52 12.1302 141.52 14.5015C141.52 16.8728 142.888 18.0281 144.377 18.0281C145.867 18.0281 146.81 17.3289 147.387 15.5352L149.971 16.4776C149.211 19.3658 146.962 20.6427 144.377 20.6427C141.033 20.6427 138.479 18.1801 138.479 14.5015Z" fill="#3D3B40"/>
+                        <path d="M150.731 14.5015C150.731 10.8837 153.316 8.36035 156.781 8.36035C160.247 8.36035 162.862 10.8837 162.862 14.5015C162.862 18.1193 160.278 20.6427 156.781 20.6427C153.285 20.6427 150.731 18.1497 150.731 14.5015ZM159.852 14.5015C159.852 12.2518 158.545 10.9749 156.781 10.9749C155.018 10.9749 153.741 12.2518 153.741 14.5015C153.741 16.7512 155.048 18.0585 156.781 18.0585C158.514 18.0585 159.852 16.7512 159.852 14.5015Z" fill="#3D3B40"/>
+                        <path d="M181.224 12.6167V20.3692H178.275V13.2248C178.275 11.7351 177.515 10.9142 176.451 10.9142C175.387 10.9142 174.293 11.7655 174.293 13.316V20.3692H171.344V13.2248C171.344 11.7351 170.584 10.9142 169.52 10.9142C168.456 10.9142 167.361 11.7655 167.361 13.316V20.3692H164.412V8.6341H167.361V10.0934C167.65 9.54486 168.09 9.09032 168.628 8.78331C169.167 8.4763 169.782 8.3296 170.401 8.36049C171.085 8.33862 171.761 8.50946 172.353 8.85351C172.944 9.19755 173.427 9.70094 173.745 10.3062C174.445 8.93812 175.691 8.36049 177.15 8.36049C179.491 8.36049 181.224 10.063 181.224 12.6167Z" fill="#3D3B40"/>
+                        <path d="M182.714 18.6668C182.72 18.2833 182.839 17.9102 183.057 17.5942C183.274 17.2783 183.58 17.0336 183.936 16.891C184.292 16.7484 184.682 16.7142 185.058 16.7926C185.433 16.8711 185.777 17.0588 186.046 17.3321C186.315 17.6053 186.497 17.9521 186.57 18.3286C186.643 18.7052 186.603 19.0949 186.454 19.4486C186.306 19.8024 186.057 20.1045 185.738 20.317C185.418 20.5295 185.043 20.6428 184.66 20.6429C184.399 20.6516 184.14 20.6062 183.898 20.5096C183.656 20.413 183.437 20.2672 183.254 20.0815C183.071 19.8958 182.929 19.6742 182.836 19.4307C182.743 19.1872 182.701 18.9271 182.714 18.6668V18.6668Z" fill="#3D3B40"/>
+                        <path d="M198.371 12.9814V20.369H195.635V19.2442C194.936 20.1866 193.72 20.6427 192.17 20.6427C189.433 20.6427 187.64 19.2746 187.64 16.964C187.64 14.6535 189.494 13.3158 192.382 13.3158C193.72 13.3158 194.754 13.7111 195.422 14.3495V13.2854C195.422 11.7045 194.51 10.9749 192.99 10.9749C191.47 10.9749 190.801 11.6741 190.376 12.8598L187.913 11.8261C188.734 9.33321 190.771 8.36035 193.112 8.36035C195.939 8.36035 198.371 9.81963 198.371 12.9814ZM195.483 16.964C195.483 15.9608 194.51 15.3832 193.082 15.3832C191.653 15.3832 190.649 15.9608 190.649 16.964C190.649 17.9673 191.653 18.5145 193.082 18.5145C194.51 18.5145 195.483 17.9673 195.483 16.964V16.964Z" fill="#3D3B40"/>
+                        <path d="M200.165 15.6566V8.63379H203.144V15.4742C203.144 17.2375 204.056 18.0279 205.333 18.0279C206.61 18.0279 207.553 17.2375 207.553 15.4742V8.63379H210.502V15.6566C210.502 18.788 208.313 20.6425 205.333 20.6425C202.354 20.6425 200.165 18.788 200.165 15.6566Z" fill="#3D3B40"/>
+                    </g>
+                    <defs>
+                        <clipPath id="clip0_4974_109315">
+                            <rect width="210.502" height="28" fill="white"/>
+                        </clipPath>
+                    </defs>
+                </svg>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="#buy" class="nav-link">Buy <i class="fas fa-chevron-down"></i></a>
+                <a href="#rent" class="nav-link">Rent <i class="fas fa-chevron-down"></i></a>
+                <div class="nav-dropdown">
+                    <a href="#sell" class="nav-link dropdown-trigger">Sell <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-menu" id="sell-dropdown">
+                        <div class="dropdown-content">
+                            <div class="dropdown-column">
+                                <h4>PROPERTY VALUE</h4>
+                                <ul>
+                                    <li><a href="#instant-valuation">Instant property valuation</a></li>
+                                    <li><a href="#agent-valuation">Get an agent valuation</a></li>
+                                    <li><a href="#auction-results">Auction results & sales</a></li>
+                                    <li><a href="#sold-properties">Sold properties</a></li>
+                                </ul>
+                            </div>
+                            <div class="dropdown-column">
+                                <h4>RESOURCES</h4>
+                                <ul>
+                                    <li><a href="#how-to-sell">How to sell</a></li>
+                                    <li><a href="#suburb-performance">Suburb performance</a></li>
+                                </ul>
+                            </div>
+                            <div class="dropdown-column">
+                                <h4>FIND AN AGENT</h4>
+                                <ul>
+                                    <li><a href="#find-agent">Find an agent</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a href="#loans" class="nav-link">Home Loans <i class="fas fa-chevron-down"></i></a>
+                <a href="#news" class="nav-link">News <i class="fas fa-chevron-down"></i></a>
+            </div>
+            <div class="nav-actions">
+                <a href="#collections" class="nav-icon-link">
+                    <i class="fas fa-layer-group"></i>
+                    <span>Collections</span>
+                </a>
+                <a href="#property" class="nav-icon-link">
+                    <i class="fas fa-home"></i>
+                    <span>My Property</span>
+                </a>
+                <a href="#join" class="nav-text-link">Join</a>
+                <button class="btn-signin">Sign in</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">Welcome to Playground</h1>
+                <p class="hero-description">
+                    A modern, responsive website built with clean code and beautiful design. 
+                    Explore our features and discover what we can do for you.
+                </p>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary">Get Started</button>
+                    <button class="btn btn-secondary">Learn More</button>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="hero-placeholder">
+                    <i class="fas fa-rocket"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header">
+                <h2>About Us</h2>
+                <p>We create amazing digital experiences</p>
+            </div>
+            <div class="about-grid">
+                <div class="about-card">
+                    <div class="card-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Clean Code</h3>
+                    <p>We write clean, maintainable code that follows best practices and industry standards.</p>
+                </div>
+                <div class="about-card">
+                    <div class="card-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Responsive Design</h3>
+                    <p>Our websites look great on all devices, from mobile phones to desktop computers.</p>
+                </div>
+                <div class="about-card">
+                    <div class="card-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>Fast Performance</h3>
+                    <p>We optimize for speed and performance to ensure the best user experience.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Services</h2>
+                <p>What we can do for you</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-item">
+                    <div class="service-icon">
+                        <i class="fas fa-paint-brush"></i>
+                    </div>
+                    <h3>Web Design</h3>
+                    <p>Beautiful, modern designs that capture your brand's essence and engage your audience.</p>
+                </div>
+                <div class="service-item">
+                    <div class="service-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3>Web Development</h3>
+                    <p>Custom web applications built with the latest technologies and frameworks.</p>
+                </div>
+                <div class="service-item">
+                    <div class="service-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3>SEO Optimization</h3>
+                    <p>Improve your search engine rankings and drive more organic traffic to your site.</p>
+                </div>
+                <div class="service-item">
+                    <div class="service-icon">
+                        <i class="fas fa-cog"></i>
+                    </div>
+                    <h3>Maintenance</h3>
+                    <p>Keep your website updated, secure, and running smoothly with our maintenance services.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2>Get In Touch</h2>
+                <p>Ready to start your next project?</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p>hello@playground.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Phone</h4>
+                            <p>+1 (555) 123-4567</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Location</h4>
+                            <p>San Francisco, CA</p>
+                        </div>
+                    </div>
+                </div>
+                <form class="contact-form">
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Playground</h3>
+                    <p>Creating amazing digital experiences with clean code and beautiful design.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#">Web Design</a></li>
+                        <li><a href="#">Web Development</a></li>
+                        <li><a href="#">SEO Optimization</a></li>
+                        <li><a href="#">Maintenance</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Playground. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
