@@ -3,29 +3,356 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Find an Agent - Playground</title>
+    <title>Find a Real Estate Agent | realestate.com.au</title>
+    <meta name="description" content="Find the perfect real estate agent in your area. Search by suburb, compare profiles, read reviews, and connect with top local agents who know your market.">
+    <meta name="keywords" content="real estate agent, find agent, local agent, property agent, real estate professional, agent search">
+    
+    <!-- Schema.org markup for SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Find a Real Estate Agent",
+        "description": "Find the perfect real estate agent in your area. Search by suburb, compare profiles, read reviews, and connect with top local agents.",
+        "url": "https://www.realestate.com.au/find-agent",
+        "mainEntity": {
+            "@type": "ItemList",
+            "name": "Real Estate Agents",
+            "description": "Local real estate agents available in your area"
+        }
+    }
+    </script>
+    
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <!-- Navigation Component -->
     <div id="navigation-container"></div>
 
-    <!-- Main Content -->
-    <main class="main-content">
-        <div class="container">
-            <h1>Find an Agent</h1>
-            <p>Connect with experienced real estate agents in your area.</p>
-            <!-- Content will be added here -->
+    <!-- Hero Section -->
+    <section class="find-agent-hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>A great agent makes all the difference.</h1>
+                <p class="hero-subheading">Find the right local expert who knows your market inside and out. Get personalized recommendations and connect with top-performing agents in your area.</p>
+                
+                <!-- Suburb Search Form -->
+                <form class="suburb-search-form" id="suburbSearchForm">
+                    <div class="search-container">
+                        <div class="search-input-wrapper">
+                            <i class="fas fa-search search-icon"></i>
+                            <input 
+                                type="text" 
+                                id="suburbSearch" 
+                                name="suburb" 
+                                placeholder="Enter your suburb"
+                                autocomplete="address-level2"
+                                required
+                                aria-describedby="search-help"
+                            >
+                            <div class="search-suggestions" id="searchSuggestions"></div>
+                        </div>
+                        <button type="submit" class="btn-search-agents">
+                            <span>Find Agents</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                    <small id="search-help" class="search-help">Start typing to see suburb suggestions</small>
+                </form>
+
+                <!-- Trust Indicators -->
+                <div class="trust-indicators">
+                    <div class="trust-stats">
+                        <div class="stat">
+                            <span class="stat-number">50,000+</span>
+                            <span class="stat-label">Agents</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">2M+</span>
+                            <span class="stat-label">Reviews</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">98%</span>
+                            <span class="stat-label">Satisfaction</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Professional real estate agents working together" loading="lazy">
+            </div>
         </div>
-    </main>
+    </section>
+
+    <!-- Agent Results Section -->
+    <section class="agent-results" id="agentResults" style="display: none;">
+        <div class="container">
+            <div class="results-header">
+                <h2 id="resultsTitle">Real estate agents in <span id="searchedSuburb">your area</span></h2>
+                <div class="results-controls">
+                    <div class="filter-toggle">
+                        <button class="btn-filter" id="filterToggle">
+                            <i class="fas fa-sliders-h"></i>
+                            Filters
+                        </button>
+                    </div>
+                    <div class="sort-dropdown">
+                        <select id="sortAgents" aria-label="Sort agents">
+                            <option value="relevance">Most Relevant</option>
+                            <option value="rating">Highest Rated</option>
+                            <option value="experience">Most Experienced</option>
+                            <option value="recent">Recently Active</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Agent Carousel -->
+            <div id="searchResultsCarousel"></div>
+
+            <div class="view-all-agents">
+                <button class="btn-secondary" id="viewAllAgents">
+                    View All Agents in <span id="viewAllSuburb">this area</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Top Agents Section -->
+    <section class="top-agents">
+        <div class="container">
+            <h2>Top agents in your area</h2>
+            <p class="section-subtitle">Connect with verified agents who have proven success in your local market</p>
+            
+            <div id="topAgentsCarousel"></div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <h2>Frequently asked questions</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>How to find a good real estate agent near me?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Start by searching for agents in your specific suburb using our search tool above. Look for agents with:</p>
+                        <ul>
+                            <li>High ratings and positive reviews from past clients</li>
+                            <li>Recent sales in your area and property type</li>
+                            <li>Local market expertise and knowledge</li>
+                            <li>Professional credentials and experience</li>
+                        </ul>
+                        <p>Our platform shows you verified agents with proven track records in your area.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>How to pick a real estate agent?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>When choosing an agent, consider these key factors:</p>
+                        <ul>
+                            <li><strong>Local expertise:</strong> Do they know your market well?</li>
+                            <li><strong>Communication style:</strong> Do you feel comfortable working with them?</li>
+                            <li><strong>Marketing strategy:</strong> How will they promote your property?</li>
+                            <li><strong>Track record:</strong> What are their recent sales results?</li>
+                            <li><strong>Fees and commission:</strong> Are their rates competitive?</li>
+                        </ul>
+                        <p>Interview multiple agents and ask for references from recent clients.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>How to contact a real estate agent?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>You can contact agents through our platform in several ways:</p>
+                        <ul>
+                            <li>Click "Contact" on any agent profile to send a message</li>
+                            <li>Use our "Connect with a local agent" form above</li>
+                            <li>Call agents directly using their listed phone numbers</li>
+                            <li>Visit their agency office in person</li>
+                        </ul>
+                        <p>Most agents respond within 24 hours and offer free initial consultations.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>How do I leave a review for a real estate agent?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>To leave a review for an agent:</p>
+                        <ul>
+                            <li>Visit the agent's profile page</li>
+                            <li>Click "Write a Review" or "Rate this Agent"</li>
+                            <li>Rate their service (1-5 stars)</li>
+                            <li>Write a detailed review about your experience</li>
+                            <li>Submit your review for moderation</li>
+                        </ul>
+                        <p>Reviews help other property owners make informed decisions and help agents improve their services.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-cta">
+                <p>Explore agents by local market expertise, specialties, and verified reviews to find the perfect match.</p>
+                <button class="btn-primary" onclick="document.getElementById('suburbSearch').focus()">
+                    Start Your Search
+                </button>
+            </div>
+        </div>
+    </section>
 
     <!-- Footer Component -->
     <div id="footer-container"></div>
 
-    <!-- Component Loading Script -->
+    <!-- Scripts -->
     <script src="components/components.js"></script>
-    <script src="script.js"></script>
+    <script src="components/agent-carousel.js"></script>
+    <script>
+        // Use agent data from component
+        const sampleAgents = window.AgentCarousel.sampleAgents;
+
+        // Suburb suggestions
+        const suburbSuggestions = [
+            "Richmond", "Toorak", "Hawthorn", "South Yarra", "Brighton", "Prahran",
+            "Carlton", "Fitzroy", "St Kilda", "Elwood", "Malvern", "Armadale",
+            "Camberwell", "Kew", "Balwyn", "Glen Iris", "Caulfield", "Sandringham"
+        ];
+
+        // DOM elements
+        const suburbSearchForm = document.getElementById('suburbSearchForm');
+        const suburbSearchInput = document.getElementById('suburbSearch');
+        const searchSuggestions = document.getElementById('searchSuggestions');
+        const agentResults = document.getElementById('agentResults');
+        const resultsTitle = document.getElementById('resultsTitle');
+        const searchedSuburb = document.getElementById('searchedSuburb');
+        const viewAllSuburb = document.getElementById('viewAllSuburb');
+
+        // Search functionality
+        suburbSearchInput.addEventListener('input', function() {
+            const query = this.value.toLowerCase();
+            if (query.length > 1) {
+                const filtered = suburbSuggestions.filter(suburb => 
+                    suburb.toLowerCase().includes(query)
+                );
+                showSuggestions(filtered);
+            } else {
+                hideSuggestions();
+            }
+        });
+
+        function showSuggestions(suggestions) {
+            searchSuggestions.innerHTML = suggestions.map(suburb => 
+                `<div class="suggestion-item" onclick="selectSuburb('${suburb}')">${suburb}</div>`
+            ).join('');
+            searchSuggestions.style.display = 'block';
+        }
+
+        function hideSuggestions() {
+            searchSuggestions.style.display = 'none';
+        }
+
+        function selectSuburb(suburb) {
+            suburbSearchInput.value = suburb;
+            hideSuggestions();
+        }
+
+        // Hide suggestions when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!e.target.closest('.search-input-wrapper')) {
+                hideSuggestions();
+            }
+        });
+
+        // Form submission
+        suburbSearchForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const suburb = suburbSearchInput.value.trim();
+            if (suburb) {
+                searchAgents(suburb);
+                hideSuggestions();
+            }
+        });
+
+        function searchAgents(suburb) {
+            // Update UI
+            searchedSuburb.textContent = suburb;
+            viewAllSuburb.textContent = suburb;
+            
+            // Show results section
+            agentResults.style.display = 'block';
+            agentResults.scrollIntoView({ behavior: 'smooth' });
+            
+            // Load and populate search results carousel
+            loadAgentCarousel('searchResultsCarousel', sampleAgents);
+            
+            // Track search
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'search', {
+                    search_term: suburb,
+                    event_category: 'agent_search'
+                });
+            }
+        }
+
+        // Load agent carousel component
+        function loadAgentCarousel(containerId, agents) {
+            fetch('components/agent-carousel.html')
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById(containerId).innerHTML = html;
+                    window.AgentCarousel.init(containerId, { cardsPerView: 3 });
+                    window.AgentCarousel.populateCarousel(agents);
+                })
+                .catch(error => {
+                    console.error('Error loading agent carousel:', error);
+                });
+        }
+
+        // FAQ functionality
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', function() {
+                const faqItem = this.parentElement;
+                const answer = faqItem.querySelector('.faq-answer');
+                const isExpanded = this.getAttribute('aria-expanded') === 'true';
+                
+                // Close all other FAQ items
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    if (item !== faqItem) {
+                        item.classList.remove('active');
+                        item.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+                    }
+                });
+                
+                // Toggle current item
+                faqItem.classList.toggle('active');
+                this.setAttribute('aria-expanded', !isExpanded);
+            });
+        });
+
+        // Sort functionality
+        document.getElementById('sortAgents').addEventListener('change', function() {
+            const sortBy = this.value;
+            window.AgentCarousel.sortAgents(sortBy);
+        });
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            // Load top agents carousel
+            loadAgentCarousel('topAgentsCarousel', sampleAgents);
+        });
+    </script>
 </body>
 </html>

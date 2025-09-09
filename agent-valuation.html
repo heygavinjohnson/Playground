@@ -3,29 +3,318 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Get an Agent Valuation - Playground</title>
+    <title>Get a Free Property Valuation with a Local Agent | realestate.com.au</title>
+    <meta name="description" content="Get the most accurate property valuation from local agents. Free, professional valuations based on local market knowledge and your property's unique features.">
+    <meta name="keywords" content="property valuation, real estate agent, local agent, free valuation, property assessment">
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "Professional Property Valuation",
+        "description": "Free property valuation service with local real estate agents",
+        "provider": {
+            "@type": "Organization",
+            "name": "realestate.com.au"
+        },
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "AUD"
+        }
+    }
+    </script>
 </head>
 <body>
     <!-- Navigation Component -->
     <div id="navigation-container"></div>
 
-    <!-- Main Content -->
-    <main class="main-content">
-        <div class="container">
-            <h1>Get an Agent Valuation</h1>
-            <p>Connect with a professional agent for a detailed property valuation.</p>
-            <!-- Content will be added here -->
+    <!-- Hero Section -->
+    <section class="agent-hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Get a free property valuation with a local agent</h1>
+                <p class="hero-subheading">Get the most accurate valuation from local agents based on your unique property features, their in-depth knowledge of the area, and the latest market changes.</p>
+                <button class="btn-primary" onclick="scrollToForm()">
+                    <span>Start now</span>
+                    <i class="fas fa-arrow-down"></i>
+                </button>
+            </div>
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" alt="Local real estate agent speaking with homeowners" loading="lazy">
+            </div>
         </div>
-    </main>
+    </section>
+
+    <!-- Quick Links Section -->
+    <section class="quick-links">
+        <div class="container">
+            <div class="links-grid">
+                <a href="#lead-form" class="link-card primary">
+                    <div class="card-icon">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <h3>Get a free property valuation from a local agent</h3>
+                    <p>Connect with experienced local agents for a detailed, personalized property assessment</p>
+                    <span class="card-cta">Get Started <i class="fas fa-arrow-right"></i></span>
+                </a>
+                <a href="/instant-valuation" class="link-card">
+                    <div class="card-icon">
+                        <i class="fas fa-calculator"></i>
+                    </div>
+                    <h3>Find out how much your property's worth with realEstimate</h3>
+                    <p>Get an instant AI-powered property estimate in seconds</p>
+                    <span class="card-cta">Try Now <i class="fas fa-arrow-right"></i></span>
+                </a>
+                <a href="/sold" class="link-card">
+                    <div class="card-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Discover recently sold properties in your area</h3>
+                    <p>Browse recent sales data to understand your local market trends</p>
+                    <span class="card-cta">View Sales <i class="fas fa-arrow-right"></i></span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Top Agents Section -->
+    <section class="top-agents">
+        <div class="container">
+            <h2>Top agents in your area</h2>
+            <div id="topAgentsCarousel"></div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="why-choose">
+        <div class="container">
+            <h2>Why choose an agent through realestate.com.au</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-gift"></i>
+                    </div>
+                    <h3>No cost</h3>
+                    <p>It's free to get a valuation. No hidden fees, no obligations - just professional advice from local experts.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3>Industry-leading data</h3>
+                    <p>Only agents here have access to our full dataset, giving you the most comprehensive market insights available.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3>Rated and reviewed</h3>
+                    <p>All agents have public ratings and reviews, so you can choose the right professional for your needs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lead Capture Form Section -->
+    <section id="lead-form" class="lead-capture">
+        <div class="container">
+            <div class="form-container">
+                <div class="form-header">
+                    <h2>Get Your Free Property Valuation</h2>
+                    <p>Fill out the form below and we'll connect you with a top local agent in your area</p>
+                </div>
+                <form class="valuation-form" id="agentValuationForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstName">First Name *</label>
+                            <input type="text" id="firstName" name="firstName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Last Name *</label>
+                            <input type="text" id="lastName" name="lastName" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number *</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="propertyAddress">Property Address *</label>
+                        <div class="address-input-container">
+                            <i class="fas fa-map-marker-alt address-icon"></i>
+                            <input 
+                                type="text" 
+                                id="propertyAddress" 
+                                name="propertyAddress" 
+                                placeholder="Enter your property address"
+                                autocomplete="address-line1"
+                                required
+                            >
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="propertyType">Property Type *</label>
+                        <select id="propertyType" name="propertyType" required>
+                            <option value="">Select property type</option>
+                            <option value="house">House</option>
+                            <option value="apartment">Apartment</option>
+                            <option value="townhouse">Townhouse</option>
+                            <option value="unit">Unit</option>
+                            <option value="land">Land</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="timeline">When are you looking to sell?</label>
+                        <select id="timeline" name="timeline">
+                            <option value="">Select timeline</option>
+                            <option value="immediately">Immediately</option>
+                            <option value="1-3-months">1-3 months</option>
+                            <option value="3-6-months">3-6 months</option>
+                            <option value="6-12-months">6-12 months</option>
+                            <option value="just-curious">Just curious</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Additional Information (Optional)</label>
+                        <textarea id="message" name="message" rows="4" placeholder="Tell us more about your property or any specific questions you have..."></textarea>
+                    </div>
+                    <div class="form-group checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="privacyConsent" name="privacyConsent" required>
+                            <span class="checkmark"></span>
+                            I agree to the <a href="/privacy-policy" target="_blank">Privacy Policy</a> and consent to being contacted by realestate.com.au and local agents about my property valuation request.
+                        </label>
+                    </div>
+                    <button type="submit" class="btn-submit" id="submitBtn">
+                        <span class="btn-text">Get My Free Valuation</span>
+                        <i class="fas fa-arrow-right btn-icon"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
 
     <!-- Footer Component -->
     <div id="footer-container"></div>
 
     <!-- Component Loading Script -->
     <script src="components/components.js"></script>
+    <script src="components/agent-carousel.js"></script>
     <script src="script.js"></script>
+    
+    <!-- Agent Valuation Page Script -->
+    <script>
+        // Smooth scroll to form
+        function scrollToForm() {
+            document.getElementById('lead-form').scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+
+        // Contact agent function
+        function contactAgent(agentId) {
+            // Track conversion event
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'agent_contact_click', {
+                    'event_category': 'engagement',
+                    'event_label': agentId
+                });
+            }
+            
+            // Scroll to form and pre-fill with agent preference
+            scrollToForm();
+            // In a real implementation, you might pre-fill a hidden field with the agent ID
+        }
+
+        // Form submission handler
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('agentValuationForm');
+            const submitBtn = document.getElementById('submitBtn');
+            
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Track conversion event
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'form_submit', {
+                        'event_category': 'conversion',
+                        'event_label': 'agent_valuation_request'
+                    });
+                }
+                
+                // Show loading state
+                const originalText = submitBtn.innerHTML;
+                submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Submitting...';
+                submitBtn.disabled = true;
+                
+                // Simulate API call
+                setTimeout(() => {
+                    // In a real implementation, this would submit to your CRM
+                    alert('Thank you! Your valuation request has been submitted. A local agent will contact you within 24 hours.');
+                    
+                    // Reset form
+                    form.reset();
+                    submitBtn.innerHTML = originalText;
+                    submitBtn.disabled = false;
+                }, 2000);
+            });
+            
+            // Address autocomplete simulation
+            const addressInput = document.getElementById('propertyAddress');
+            addressInput.addEventListener('input', function() {
+                // In a real implementation, this would call an autocomplete API
+                console.log('Address input:', this.value);
+            });
+            
+            // Form validation
+            const requiredFields = form.querySelectorAll('[required]');
+            requiredFields.forEach(field => {
+                field.addEventListener('blur', function() {
+                    validateField(this);
+                });
+            });
+            
+            // Load top agents carousel
+            loadAgentCarousel('topAgentsCarousel', window.AgentCarousel.sampleAgents);
+        });
+        
+        // Load agent carousel component
+        function loadAgentCarousel(containerId, agents) {
+            fetch('components/agent-carousel.html')
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById(containerId).innerHTML = html;
+                    window.AgentCarousel.init(containerId, { cardsPerView: 3 });
+                    window.AgentCarousel.populateCarousel(agents);
+                })
+                .catch(error => {
+                    console.error('Error loading agent carousel:', error);
+                });
+        }
+        
+        function validateField(field) {
+            const value = field.value.trim();
+            const isValid = value !== '';
+            
+            if (isValid) {
+                field.classList.remove('error');
+                field.classList.add('valid');
+            } else {
+                field.classList.add('error');
+                field.classList.remove('valid');
+            }
+        }
+    </script>
 </body>
 </html>

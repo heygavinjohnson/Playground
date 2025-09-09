@@ -3,23 +3,278 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Instant Property Valuation - Playground</title>
+    <title>Instant AI Property Valuation | realEstimate by realestate.com.au</title>
+    <meta name="description" content="Get your free AI-powered property estimate in seconds. Know your home's value instantly, backed by Australia's #1 property site.">
+    <meta name="keywords" content="property valuation, home value, instant valuation, AI property estimate, realestate.com.au">
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Product",
+        "name": "realEstimate AI Property Valuation",
+        "description": "Instant AI-powered property valuation tool",
+        "brand": {
+            "@type": "Brand",
+            "name": "realestate.com.au"
+        },
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "AUD",
+            "availability": "https://schema.org/InStock"
+        }
+    }
+    </script>
 </head>
 <body>
     <!-- Navigation Component -->
     <div id="navigation-container"></div>
 
-    <!-- Main Content -->
-    <main class="main-content">
-        <div class="container">
-            <h1>Instant Property Valuation</h1>
-            <p>Get an instant property valuation for your home.</p>
-            <!-- Content will be added here -->
+    <!-- Hero Section -->
+    <section class="valuation-hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Know your home's value – instantly</h1>
+                <p class="hero-subheading">Get your AI-powered property estimate in seconds and make confident property decisions.</p>
+                
+                <!-- Address Search Form -->
+                <form class="valuation-form" id="valuationForm">
+                    <div class="form-group">
+                        <label for="address" class="sr-only">Enter your property address</label>
+                        <div class="address-input-container">
+                            <i class="fas fa-map-marker-alt address-icon"></i>
+                            <input 
+                                type="text" 
+                                id="address" 
+                                name="address" 
+                                placeholder="Enter your property address"
+                                autocomplete="address-line1"
+                                required
+                                aria-describedby="address-help"
+                            >
+                            <button type="submit" class="btn-valuation" id="getValuationBtn">
+                                <span class="btn-text">Find Out Now</span>
+                                <i class="fas fa-arrow-right btn-icon"></i>
+                            </button>
+                        </div>
+                        <small id="address-help" class="form-help">Start typing your address and select from suggestions</small>
+                    </div>
+                </form>
+
+                <!-- Trust Signals -->
+                <div class="trust-signals">
+                    <div class="trust-badges">
+                        <span class="trust-badge">
+                            <i class="fas fa-robot"></i>
+                            AI-Powered
+                        </span>
+                        <span class="trust-badge">
+                            <i class="fas fa-shield-alt"></i>
+                            Free & Secure
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" alt="Aerial view of residential properties" loading="lazy">
+            </div>
         </div>
-    </main>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="how-it-works">
+        <div class="container">
+            <h2>How It Works</h2>
+            <div class="steps-grid">
+                <div class="step-item">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Enter your address</h3>
+                        <p>Simply type your property address and select from our smart suggestions</p>
+                    </div>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Our AI analyses millions of data points</h3>
+                        <p>Advanced algorithms process market trends, recent sales, and property features</p>
+                    </div>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Get your instant property value</h3>
+                        <p>Receive your personalized estimate with local market insights</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Use realEstimate Section -->
+    <section class="benefits">
+        <div class="container">
+            <h2>Why Use realEstimate</h2>
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>AI-Powered Accuracy</h3>
+                    <p>Advanced machine learning algorithms analyze millions of data points for precise estimates</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3>Backed by Australia's Biggest Property Platform</h3>
+                    <p>Powered by realestate.com.au's comprehensive property database and market insights</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>Instant, Anytime, Any Device</h3>
+                    <p>Get your valuation in seconds, 24/7, from your phone, tablet, or computer</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-gift"></i>
+                    </div>
+                    <h3>Completely Free to Use</h3>
+                    <p>No hidden costs, no registration required - just instant, free property valuations</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sample Output Preview -->
+    <section class="sample-output">
+        <div class="container">
+            <h2>See What You'll Get</h2>
+            <div class="output-preview">
+                <div class="preview-card">
+                    <div class="preview-header">
+                        <h3>Your Property Valuation</h3>
+                        <div class="preview-address">123 Sample Street, Melbourne VIC 3000</div>
+                    </div>
+                    <div class="preview-content">
+                        <div class="valuation-range">
+                            <span class="range-label">Estimated Value Range</span>
+                            <span class="range-value">$850,000 - $920,000</span>
+                        </div>
+                        <div class="market-insights">
+                            <div class="insight-item">
+                                <i class="fas fa-chart-line"></i>
+                                <span>Market trend: +2.3% this quarter</span>
+                            </div>
+                            <div class="insight-item">
+                                <i class="fas fa-home"></i>
+                                <span>Similar properties: 12 sold nearby</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="preview-cta">
+                        <button class="btn-secondary" onclick="document.getElementById('address').focus()">
+                            Check My Property Value
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Owner Journey Section -->
+    <section class="owner-journey">
+        <div class="container">
+            <h2>Your Property Journey Starts Here</h2>
+            <div class="journey-steps">
+                <div class="journey-item">
+                    <div class="journey-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3>Curious</h3>
+                    <p>Wondering what your home is worth?</p>
+                </div>
+                <div class="journey-arrow">
+                    <i class="fas fa-arrow-right"></i>
+                </div>
+                <div class="journey-item">
+                    <div class="journey-icon">
+                        <i class="fas fa-calculator"></i>
+                    </div>
+                    <h3>Finds Value</h3>
+                    <p>Get your instant AI-powered estimate</p>
+                </div>
+                <div class="journey-arrow">
+                    <i class="fas fa-arrow-right"></i>
+                </div>
+                <div class="journey-item">
+                    <div class="journey-icon">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <h3>Speaks to Agent</h3>
+                    <p>Connect with local property experts</p>
+                </div>
+                <div class="journey-arrow">
+                    <i class="fas fa-arrow-right"></i>
+                </div>
+                <div class="journey-item">
+                    <div class="journey-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3>Lists with Confidence</h3>
+                    <p>Make informed decisions about your property</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="testimonial-content">
+                <div class="testimonial-quote">
+                    <blockquote>
+                        "I was amazed at how accurate the valuation was. It gave me the confidence to list my property at the right price and I sold within a week!"
+                    </blockquote>
+                    <cite>- Sarah M., Melbourne</cite>
+                </div>
+                <div class="usage-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">50,000+</span>
+                        <span class="stat-label">Property owners trust us monthly</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">95%</span>
+                        <span class="stat-label">Accuracy rate vs actual sales</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sticky CTA Bar -->
+    <div class="sticky-cta" id="stickyCta">
+        <div class="container">
+            <div class="sticky-content">
+                <div class="sticky-text">
+                    <h3>Get your instant AI-powered home value now</h3>
+                </div>
+                <form class="sticky-form" id="stickyForm">
+                    <div class="sticky-input-container">
+                        <input type="text" placeholder="Enter your address" id="stickyAddress" name="stickyAddress">
+                        <button type="submit" class="btn-sticky">
+                            <span>Get Value</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 
     <!-- Footer Component -->
     <div id="footer-container"></div>
@@ -27,5 +282,71 @@
     <!-- Component Loading Script -->
     <script src="components/components.js"></script>
     <script src="script.js"></script>
+    
+    <!-- Valuation Page Script -->
+    <script>
+        // Address autocomplete simulation
+        document.addEventListener('DOMContentLoaded', function() {
+            const addressInput = document.getElementById('address');
+            const stickyAddressInput = document.getElementById('stickyAddress');
+            const stickyCta = document.getElementById('stickyCta');
+            
+            // Show sticky CTA on scroll
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 300) {
+                    stickyCta.classList.add('visible');
+                } else {
+                    stickyCta.classList.remove('visible');
+                }
+            });
+            
+            // Form submission handlers
+            document.getElementById('valuationForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                handleValuationRequest(addressInput.value);
+            });
+            
+            document.getElementById('stickyForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                handleValuationRequest(stickyAddressInput.value);
+            });
+            
+            // Address input focus handlers
+            addressInput.addEventListener('focus', function() {
+                this.parentElement.classList.add('focused');
+            });
+            
+            addressInput.addEventListener('blur', function() {
+                this.parentElement.classList.remove('focused');
+            });
+            
+            // Simulate address autocomplete
+            addressInput.addEventListener('input', function() {
+                // In a real implementation, this would call an autocomplete API
+                console.log('Address input:', this.value);
+            });
+        });
+        
+        function handleValuationRequest(address) {
+            if (!address.trim()) {
+                alert('Please enter a valid address');
+                return;
+            }
+            
+            // Simulate API call
+            const btn = document.querySelector('.btn-valuation');
+            const originalText = btn.innerHTML;
+            
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Analyzing...';
+            btn.disabled = true;
+            
+            setTimeout(() => {
+                // In a real implementation, this would redirect to results page
+                alert('Valuation request submitted for: ' + address);
+                btn.innerHTML = originalText;
+                btn.disabled = false;
+            }, 2000);
+        }
+    </script>
 </body>
 </html>
