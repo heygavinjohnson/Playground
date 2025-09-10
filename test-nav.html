@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation Test</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Component -->
+    <div id="navigation-container"></div>
+
+    <div style="padding: 100px 20px; text-align: center;">
+        <h1>Navigation Test Page</h1>
+        <p>Click on the "Sell" dropdown in the navigation to test if it works.</p>
+        <p>Check the browser console for any error messages.</p>
+    </div>
+
+    <!-- Component Loading Script -->
+    <script src="components/components.js"></script>
+    
+    <script>
+        // Additional debugging
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log('Test page loaded');
+            
+            // Check if navigation is loaded after a delay
+            setTimeout(() => {
+                const dropdownTrigger = document.querySelector('.dropdown-trigger');
+                const dropdownMenu = document.getElementById('sell-dropdown');
+                
+                console.log('Dropdown elements check:', {
+                    trigger: dropdownTrigger,
+                    menu: dropdownMenu,
+                    triggerText: dropdownTrigger ? dropdownTrigger.textContent : 'N/A'
+                });
+                
+                if (dropdownTrigger) {
+                    console.log('Dropdown trigger found, adding test click handler');
+                    dropdownTrigger.addEventListener('click', (e) => {
+                        console.log('Dropdown clicked via test handler');
+                    });
+                }
+            }, 1000);
+        });
+    </script>
+</body>
+</html>

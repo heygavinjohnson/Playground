@@ -522,16 +522,81 @@ body {
 
 /* Hero Section */
 .hero {
-    padding: 80px 0;
-    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
-    background-size: cover;
+    padding: 2rem 2rem 16rem 2rem;
+    background: linear-gradient(100.21deg, #E4002B 0%, #6249DE 101.07%);
+    background-size: 200% 200%;
     background-position: center;
     background-attachment: fixed;
     color: white;
-    min-height: 100vh;
+    min-height: calc(100vh - 80px);
     display: flex;
     align-items: center;
     position: relative;
+    animation: gradientShift 15s ease infinite;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.01) 50%, rgba(255,255,255,0.03) 100%);
+    animation: shimmer 8s ease-in-out infinite;
+    pointer-events: none;
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    top: -30%;
+    left: -30%;
+    width: 160%;
+    height: 160%;
+    background: radial-gradient(circle, rgba(255,255,255,0.02) 0%, transparent 60%);
+    animation: float 12s ease-in-out infinite;
+    pointer-events: none;
+}
+
+/* Keyframe Animations */
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes shimmer {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    50% {
+        opacity: 0.3;
+    }
+    100% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+    33% {
+        transform: translate(15px, -15px) rotate(60deg);
+    }
+    66% {
+        transform: translate(-10px, 10px) rotate(120deg);
+    }
 }
 
 .hero-content {
@@ -540,6 +605,20 @@ body {
     padding: 2.5rem 2.5rem;
     text-align: left;
     width: 100%;
+    position: relative;
+    z-index: 2;
+    animation: fadeInUp 1s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .hero-title {
@@ -559,6 +638,20 @@ body {
     max-width: 800px;
     margin: 0 auto;
     overflow: hidden;
+    animation: slideInUp 1.2s ease-out 0.3s both;
+    position: relative;
+    z-index: 2;
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .search-tabs {

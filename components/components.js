@@ -60,9 +60,11 @@ window.components = {
         const navLoaded = await this.loadNavigation();
         const footerLoaded = await this.loadFooter();
         
-        if (navLoaded && footerLoaded) {
-            console.log('All components loaded successfully');
+        if (navLoaded) {
+            console.log('Navigation loaded successfully');
             this.initializeNavigation();
+        } else {
+            console.error('Navigation failed to load');
         }
         
         return navLoaded && footerLoaded;
@@ -70,36 +72,72 @@ window.components = {
 
     // Initialize navigation functionality after loading
     initializeNavigation() {
+        // Add a small delay to ensure DOM is fully rendered
+        setTimeout(() => {
+            this.setupMobileNavigation();
+            this.setupDropdownNavigation();
+            console.log('Navigation functionality initialized');
+        }, 100);
+    },
+
+    setupMobileNavigation() {
         // Mobile Navigation Toggle
         const navToggle = document.getElementById('nav-toggle');
         const navMenu = document.getElementById('nav-menu');
 
         if (navToggle && navMenu) {
-            navToggle.addEventListener('click', () => {
+            // Remove any existing event listeners
+            navToggle.replaceWith(navToggle.cloneNode(true));
+            const newNavToggle = document.getElementById('nav-toggle');
+            
+            newNavToggle.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
                 navMenu.classList.toggle('active');
-                navToggle.classList.toggle('active');
+                newNavToggle.classList.toggle('active');
+            });
+
+            // Close mobile menu when clicking on a link
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    navMenu.classList.remove('active');
+                    newNavToggle.classList.remove('active');
+                });
             });
         }
+    },
 
+    setupDropdownNavigation() {
         // Dropdown Toggle
         const dropdownTrigger = document.querySelector('.dropdown-trigger');
         const dropdownMenu = document.getElementById('sell-dropdown');
 
         if (dropdownTrigger && dropdownMenu) {
-            dropdownTrigger.addEventListener('click', (e) => {
+            console.log('Setting up dropdown navigation');
+            
+            // Remove any existing event listeners
+            dropdownTrigger.replaceWith(dropdownTrigger.cloneNode(true));
+            const newDropdownTrigger = document.querySelector('.dropdown-trigger');
+            
+            newDropdownTrigger.addEventListener('click', (e) => {
                 e.preventDefault();
                 e.stopPropagation();
                 
+                console.log('Dropdown clicked');
+                
                 // Toggle dropdown
                 dropdownMenu.classList.toggle('active');
-                dropdownTrigger.classList.toggle('active');
+                newDropdownTrigger.classList.toggle('active');
+                
+                console.log('Dropdown active:', dropdownMenu.classList.contains('active'));
             });
 
             // Close dropdown when clicking outside
             document.addEventListener('click', (e) => {
-                if (!dropdownTrigger.contains(e.target) && !dropdownMenu.contains(e.target)) {
+                if (!newDropdownTrigger.contains(e.target) && !dropdownMenu.contains(e.target)) {
                     dropdownMenu.classList.remove('active');
-                    dropdownTrigger.classList.remove('active');
+                    newDropdownTrigger.classList.remove('active');
                 }
             });
 
@@ -107,21 +145,15 @@ window.components = {
             document.addEventListener('keydown', (e) => {
                 if (e.key === 'Escape') {
                     dropdownMenu.classList.remove('active');
-                    dropdownTrigger.classList.remove('active');
+                    newDropdownTrigger.classList.remove('active');
                 }
             });
-        }
-
-        // Close mobile menu when clicking on a link
-        const navLinks = document.querySelectorAll('.nav-link');
-        navLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                if (navMenu) navMenu.classList.remove('active');
-                if (navToggle) navToggle.classList.remove('active');
+        } else {
+            console.log('Dropdown elements not found:', {
+                trigger: !!dropdownTrigger,
+                menu: !!dropdownMenu
             });
-        });
-
-        console.log('Navigation functionality initialized');
+        }
     },
 
     // Set active page for navigation highlighting
@@ -137,3 +169,4 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log('DOM loaded, initializing components...');
     window.components.loadAll();
 });
+
