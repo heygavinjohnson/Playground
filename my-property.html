@@ -3,23 +3,368 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Property - Playground</title>
+    <title>My Property - Track Your Property & Unlock Insights | realestate.com.au</title>
+    <meta name="description" content="Track your property value, compare with similar homes, and unlock personalized insights. Stay informed on market changes and take action when opportunities arise.">
+    <meta name="keywords" content="property tracking, property value, market insights, property dashboard, real estate tools">
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <!-- Navigation Component -->
     <div id="navigation-container"></div>
 
-    <!-- Main Content -->
-    <main class="main-content">
-        <div class="container">
-            <h1>My Property</h1>
-            <p>Manage and track your property portfolio.</p>
-            <!-- Content will be added here -->
+    <!-- Hero Section -->
+    <section class="my-property-hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="large-title">Track your property and unlock personalised insights.</h1>
+                <p class="hero-subheading">Stay up to date with your property's value, market trends, and opportunities.</p>
+                
+                <!-- Address Search Form -->
+                <form class="valuation-form" id="trackingForm">
+                    <div class="form-group">
+                        <label for="address" class="sr-only">Enter your property address</label>
+                        <div class="address-input-container">
+                            <i class="fas fa-map-marker-alt address-icon"></i>
+                            <input 
+                                type="text" 
+                                id="address" 
+                                name="address" 
+                                placeholder="Enter your property address"
+                                autocomplete="address-line1"
+                                required
+                                aria-describedby="address-help"
+                            >
+                        </div>
+                        <small id="address-help" class="form-help">Your address will not be shared with third parties.</small>
+                    </div>
+                </form>
+            </div>
+            <div class="hero-image">
+                <div class="dashboard-mockup">
+                    <div class="mockup-header">
+                        <div class="mockup-nav">
+                            <div class="nav-item active">My Property</div>
+                            <div class="nav-item">Market</div>
+                            <div class="nav-item">Insights</div>
+                        </div>
+                    </div>
+                    <div class="mockup-content">
+                        <div class="property-card">
+                            <div class="property-image">
+                                <div class="property-placeholder"></div>
+                            </div>
+                            <div class="property-details">
+                                <h3>123 Sample Street</h3>
+                                <p>Melbourne VIC 3000</p>
+                                <div class="value-display">
+                                    <span class="current-value">$850,000</span>
+                                    <span class="value-change positive">+2.3%</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="chart-placeholder">
+                            <div class="chart-line"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    </main>
+    </section>
+
+    <!-- Track Property Value Section -->
+    <section class="track-value">
+        <div class="container">
+            <div class="section-content">
+                <div class="content-text">
+                    <h2 class="title-01">Track Property Value</h2>
+                    <p class="body">Get current property estimates and receive automatic email updates when your property's estimated value changes. Stay informed with real-time market data and personalized insights.</p>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check"></i> Real-time property valuations</li>
+                        <li><i class="fas fa-check"></i> Email alerts for value changes</li>
+                        <li><i class="fas fa-check"></i> Market trend analysis</li>
+                        <li><i class="fas fa-check"></i> Historical data tracking</li>
+                    </ul>
+                </div>
+                <div class="content-visual">
+                    <div class="dashboard-preview">
+                        <div class="preview-header">
+                            <h3>Property Value Dashboard</h3>
+                            <span class="last-updated">Updated 2 hours ago</span>
+                        </div>
+                        <div class="value-section">
+                            <div class="current-value-large">
+                                <span class="value-amount">$850,000</span>
+                                <span class="value-change positive">+$19,000 (+2.3%)</span>
+                            </div>
+                            <div class="value-trend">
+                                <div class="trend-chart">
+                                    <div class="chart-bars">
+                                        <div class="bar" style="height: 60%"></div>
+                                        <div class="bar" style="height: 65%"></div>
+                                        <div class="bar" style="height: 70%"></div>
+                                        <div class="bar" style="height: 75%"></div>
+                                        <div class="bar" style="height: 80%"></div>
+                                        <div class="bar" style="height: 85%"></div>
+                                        <div class="bar" style="height: 90%"></div>
+                                    </div>
+                                    <div class="chart-labels">
+                                        <span>6M</span>
+                                        <span>3M</span>
+                                        <span>1M</span>
+                                        <span>Now</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Compare Similar Properties Section -->
+    <section class="compare-properties">
+        <div class="container">
+            <div class="section-content">
+                <div class="content-text">
+                    <h2 class="title-01">Compare Similar Properties</h2>
+                    <p class="body">See how your property stacks up against similar homes in your area — from size and features to recent sale prices. Make informed decisions with comprehensive market comparisons.</p>
+                    <div class="comparison-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">12</span>
+                            <span class="stat-label">Similar properties sold</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">$45K</span>
+                            <span class="stat-label">Above median price</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-visual">
+                    <div class="comparison-cards">
+                        <div class="comparison-card">
+                            <div class="card-image">
+                                <div class="property-placeholder"></div>
+                                <span class="sold-badge">Sold</span>
+                            </div>
+                            <div class="card-details">
+                                <h4>15 Rose Street</h4>
+                                <p>3 bed • 2 bath • 650m²</p>
+                                <div class="price">$820,000</div>
+                                <div class="comparison-score">
+                                    <span class="score-label">Similarity</span>
+                                    <div class="score-bar">
+                                        <div class="score-fill" style="width: 85%"></div>
+                                    </div>
+                                    <span class="score-value">85%</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="comparison-card">
+                            <div class="card-image">
+                                <div class="property-placeholder"></div>
+                                <span class="sold-badge">Sold</span>
+                            </div>
+                            <div class="card-details">
+                                <h4>8 Oak Avenue</h4>
+                                <p>3 bed • 2 bath • 680m²</p>
+                                <div class="price">$875,000</div>
+                                <div class="comparison-score">
+                                    <span class="score-label">Similarity</span>
+                                    <div class="score-bar">
+                                        <div class="score-fill" style="width: 92%"></div>
+                                    </div>
+                                    <span class="score-value">92%</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="comparison-card">
+                            <div class="card-image">
+                                <div class="property-placeholder"></div>
+                                <span class="sold-badge">Sold</span>
+                            </div>
+                            <div class="card-details">
+                                <h4>22 Maple Drive</h4>
+                                <p>3 bed • 2 bath • 620m²</p>
+                                <div class="price">$795,000</div>
+                                <div class="comparison-score">
+                                    <span class="score-label">Similarity</span>
+                                    <div class="score-bar">
+                                        <div class="score-fill" style="width: 78%"></div>
+                                    </div>
+                                    <span class="score-value">78%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Get Agent Valuation Section -->
+    <section class="agent-valuation">
+        <div class="container">
+            <div class="section-content">
+                <div class="content-text">
+                    <h2 class="title-01">Get a Free Agent Valuation</h2>
+                    <p class="body">Book an in-person valuation with a trusted local agent to get the most accurate read on your property's market value. Our network of experienced agents provides professional assessments tailored to your property.</p>
+                    <div class="valuation-benefits">
+                        <div class="benefit-item">
+                            <i class="fas fa-user-tie"></i>
+                            <div>
+                                <h4>Local Expertise</h4>
+                                <p>Agents who know your market inside and out</p>
+                            </div>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fas fa-home"></i>
+                            <div>
+                                <h4>In-Person Assessment</h4>
+                                <p>Detailed evaluation of your property's unique features</p>
+                            </div>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fas fa-gift"></i>
+                            <div>
+                                <h4>Completely Free</h4>
+                                <p>No obligation, no hidden costs</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-visual">
+                    <div class="agent-card">
+                        <div class="agent-photo">
+                            <div class="photo-placeholder"></div>
+                        </div>
+                        <div class="agent-details">
+                            <h3>Sarah Mitchell</h3>
+                            <p class="agent-title">Senior Property Consultant</p>
+                            <div class="agent-stats">
+                                <div class="stat">
+                                    <span class="stat-number">150+</span>
+                                    <span class="stat-label">Properties Sold</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-number">4.9</span>
+                                    <span class="stat-label">Client Rating</span>
+                                </div>
+                            </div>
+                            <div class="specialties">
+                                <span class="specialty-tag">Melbourne</span>
+                                <span class="specialty-tag">Residential</span>
+                                <span class="specialty-tag">Luxury</span>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btn-primary" onclick="bookValuation()">
+                        <span>Book My Valuation</span>
+                        <i class="fas fa-calendar-alt"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Renovation Inspiration Section -->
+    <section class="renovation-inspiration">
+        <div class="container">
+            <div class="section-content">
+                <div class="content-text">
+                    <h2 class="title-01">Renovation Inspiration</h2>
+                    <p class="body">Instantly visualise a renovation — choose a photo and redesign your property in seconds. See the potential of your space with our AI-powered renovation tool.</p>
+                    <div class="renovation-features">
+                        <div class="feature-item">
+                            <i class="fas fa-magic"></i>
+                            <h4>AI-Powered Design</h4>
+                            <p>Advanced algorithms suggest optimal layouts and styles</p>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-upload"></i>
+                            <h4>Easy Photo Upload</h4>
+                            <p>Simply upload a photo and let our tool work its magic</p>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-eye"></i>
+                            <h4>Instant Preview</h4>
+                            <p>See your renovation ideas come to life in seconds</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-visual">
+                    <div class="renovation-demo">
+                        <div class="before-after">
+                            <div class="before-section">
+                                <h4>Before</h4>
+                                <div class="image-container">
+                                    <div class="property-placeholder old"></div>
+                                    <div class="upload-overlay">
+                                        <i class="fas fa-upload"></i>
+                                        <span>Upload Photo</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="arrow">
+                                <i class="fas fa-arrow-right"></i>
+                            </div>
+                            <div class="after-section">
+                                <h4>After</h4>
+                                <div class="image-container">
+                                    <div class="property-placeholder new"></div>
+                                    <div class="renovation-overlay">
+                                        <div class="renovation-elements">
+                                            <div class="element kitchen">Modern Kitchen</div>
+                                            <div class="element living">Open Living</div>
+                                            <div class="element outdoor">Outdoor Space</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="btn-primary" onclick="tryRenovation()">
+                            <span>Try it now</span>
+                            <i class="fas fa-paint-brush"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="final-cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="title-01">Ready to unlock your property's potential?</h2>
+                <p class="body">Join thousands of property owners who are already tracking their investments and making informed decisions.</p>
+                <div class="cta-buttons">
+                    <button class="btn-primary" onclick="startTracking()">
+                        <span>Start Tracking Now</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                    <button class="btn-secondary" onclick="learnMore()">
+                        <span>Learn More</span>
+                    </button>
+                </div>
+                <div class="trust-indicators">
+                    <div class="trust-item">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Secure & Private</span>
+                    </div>
+                    <div class="trust-item">
+                        <i class="fas fa-gift"></i>
+                        <span>100% Free</span>
+                    </div>
+                    <div class="trust-item">
+                        <i class="fas fa-users"></i>
+                        <span>50K+ Users</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Footer Component -->
     <div id="footer-container"></div>
@@ -27,5 +372,218 @@
     <!-- Component Loading Script -->
     <script src="components/components.js"></script>
     <script src="script.js"></script>
+    
+    <!-- My Property Page Script -->
+    <script>
+        // Conversion tracking
+        function trackEvent(eventName, properties = {}) {
+            // Google Analytics 4 event tracking
+            if (typeof gtag !== 'undefined') {
+                gtag('event', eventName, properties);
+            }
+            
+            // Custom analytics tracking
+            console.log('Event tracked:', eventName, properties);
+        }
+
+        // Address input functionality
+        function initializeAddressInput() {
+            const addressInput = document.getElementById('address');
+            const trackingForm = document.getElementById('trackingForm');
+
+            if (addressInput && trackingForm) {
+                // Add focus/blur effects
+                addressInput.addEventListener('focus', function() {
+                    this.parentElement.classList.add('focused');
+                });
+
+                addressInput.addEventListener('blur', function() {
+                    if (!this.value.trim()) {
+                        this.parentElement.classList.remove('focused');
+                    }
+                });
+
+                // Handle form submission
+                trackingForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    const address = addressInput.value.trim();
+                    
+                    if (address) {
+                        // Track the form submission
+                        trackEvent('property_tracking_started', {
+                            address: address,
+                            page: 'my_property',
+                            section: 'hero'
+                        });
+                        
+                        // Show processing notification
+                        showNotification('Processing your request...', 'info');
+                        
+                        setTimeout(() => {
+                            // Redirect to instant valuation with the address
+                            window.location.href = 'instant-valuation.html?address=' + encodeURIComponent(address);
+                        }, 1500);
+                    } else {
+                        // Show error for empty address
+                        addressInput.classList.add('error');
+                        showNotification('Please enter a valid address', 'error');
+                    }
+                });
+
+                // Add input validation
+                addressInput.addEventListener('input', function() {
+                    const value = this.value.trim();
+                    if (value.length > 0) {
+                        this.classList.remove('error');
+                    }
+                });
+            }
+        }
+
+        // Notification system
+        function showNotification(message, type = 'info') {
+            // Create notification element
+            const notification = document.createElement('div');
+            notification.className = `notification notification-${type}`;
+            notification.innerHTML = `
+                <div class="notification-content">
+                    <i class="fas fa-${type === 'success' ? 'check-circle' : type === 'error' ? 'exclamation-circle' : 'info-circle'}"></i>
+                    <span>${message}</span>
+                </div>
+            `;
+            
+            // Add styles if not already present
+            if (!document.getElementById('notification-styles')) {
+                const style = document.createElement('style');
+                style.id = 'notification-styles';
+                style.textContent = `
+                    .notification {
+                        position: fixed;
+                        top: 20px;
+                        right: 20px;
+                        background: white;
+                        border-radius: 8px;
+                        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+                        padding: 1rem 1.5rem;
+                        z-index: 1000;
+                        transform: translateX(100%);
+                        transition: transform 0.3s ease;
+                    }
+                    .notification.show {
+                        transform: translateX(0);
+                    }
+                    .notification-content {
+                        display: flex;
+                        align-items: center;
+                        gap: 0.5rem;
+                    }
+                    .notification-success { border-left: 4px solid #10b981; }
+                    .notification-error { border-left: 4px solid #ef4444; }
+                    .notification-info { border-left: 4px solid #3b82f6; }
+                `;
+                document.head.appendChild(style);
+            }
+            
+            // Add to page
+            document.body.appendChild(notification);
+            
+            // Show notification
+            setTimeout(() => notification.classList.add('show'), 100);
+            
+            // Remove after 3 seconds
+            setTimeout(() => {
+                notification.classList.remove('show');
+                setTimeout(() => notification.remove(), 300);
+            }, 3000);
+        }
+
+        // Book valuation function
+        function bookValuation() {
+            trackEvent('book_valuation_clicked', {
+                page: 'my_property',
+                section: 'agent_valuation'
+            });
+            
+            // Redirect to agent valuation form
+            window.location.href = '/agent-valuation';
+        }
+
+        // Try renovation function
+        function tryRenovation() {
+            trackEvent('renovation_tool_clicked', {
+                page: 'my_property',
+                section: 'renovation'
+            });
+            
+            // Open renovation tool modal or redirect
+            window.location.href = '/renovation-tool';
+        }
+
+        // Learn more function
+        function learnMore() {
+            trackEvent('learn_more_clicked', {
+                page: 'my_property',
+                section: 'final_cta'
+            });
+            
+            // Scroll to features or open info modal
+            document.querySelector('.track-value').scrollIntoView({ 
+                behavior: 'smooth' 
+            });
+        }
+
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', function() {
+            // Track page view
+            trackEvent('page_viewed', {
+                page: 'my_property'
+            });
+
+            // Initialize address input
+            initializeAddressInput();
+
+            // Add scroll animations
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate-in');
+                    }
+                });
+            }, observerOptions);
+
+            // Observe all sections for animation
+            document.querySelectorAll('section').forEach(section => {
+                observer.observe(section);
+            });
+        });
+
+        // CRM Integration (placeholder)
+        function submitLead(formData) {
+            // Send lead data to CRM
+            fetch('/api/leads', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData)
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Lead submitted:', data);
+                trackEvent('lead_submitted', {
+                    lead_type: formData.type,
+                    source: 'my_property_page'
+                });
+            })
+            .catch(error => {
+                console.error('Error submitting lead:', error);
+            });
+        }
+    </script>
 </body>
 </html>

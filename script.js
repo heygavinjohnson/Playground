@@ -120,7 +120,7 @@ function showNotification(message, type = 'info') {
         position: fixed;
         top: 90px;
         right: 20px;
-        background: ${type === 'success' ? '#10b981' : type === 'error' ? '#ef4444' : '#3b82f6'};
+        background: ${type === 'success' ? '#10b981' : type === 'error' ? '#E21E2D' : '#3b82f6'};
         color: white;
         padding: 1rem 1.5rem;
         border-radius: 8px;
@@ -293,19 +293,7 @@ function debounce(func, wait) {
     };
 }
 
-// Apply debouncing to scroll events
-const debouncedScrollHandler = debounce(() => {
-    const navbar = document.querySelector('.navbar');
-    if (window.scrollY > 50) {
-        navbar.style.background = 'rgba(255, 255, 255, 0.98)';
-        navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
-    } else {
-        navbar.style.background = 'rgba(255, 255, 255, 0.95)';
-        navbar.style.boxShadow = 'none';
-    }
-}, 10);
-
-window.addEventListener('scroll', debouncedScrollHandler);
+// Navigation is now part of normal document flow, no scroll-based styling needed
 
 // Keyboard navigation support
 document.addEventListener('keydown', (e) => {
