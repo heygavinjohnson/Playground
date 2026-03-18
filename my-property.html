@@ -6,28 +6,6 @@
     <title>My Property - Track Your Property & Unlock Insights | realestate.com.au</title>
     <meta name="description" content="Track your property value, compare with similar homes, and unlock personalized insights. Stay informed on market changes and take action when opportunities arise.">
     <meta name="keywords" content="property tracking, property value, market insights, property dashboard, real estate tools">
-    
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.realestate.com.au/my-property">
-    <meta property="og:title" content="My Property - Track Your Property & Unlock Insights">
-    <meta property="og:description" content="Track your property value, compare with similar homes, and unlock personalized insights. Stay informed on market changes and take action when opportunities arise.">
-    <meta property="og:image" content="https://www.realestate.com.au/images/og-my-property.jpg">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta property="og:site_name" content="realestate.com.au">
-    
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://www.realestate.com.au/my-property">
-    <meta property="twitter:title" content="My Property - Track Your Property & Unlock Insights">
-    <meta property="twitter:description" content="Track your property value, compare with similar homes, and unlock personalized insights. Stay informed on market changes and take action when opportunities arise.">
-    <meta property="twitter:image" content="https://www.realestate.com.au/images/og-my-property.jpg">
-    
-    <!-- Additional Meta Tags -->
-    <meta name="robots" content="index, follow">
-    <meta name="author" content="realestate.com.au">
-    <meta name="theme-color" content="#E21E2D">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
@@ -41,26 +19,10 @@
             <div class="hero-text">
                 <h1 class="large-title">Track your property and unlock personalised insights.</h1>
                 <p class="hero-subheading">Stay up to date with your property's value, market trends, and opportunities.</p>
-                
-                <!-- Address Search Form -->
-                <form class="valuation-form" id="trackingForm">
-                    <div class="form-group">
-                        <label for="address" class="sr-only">Enter your property address</label>
-                        <div class="address-input-container">
-                            <i class="fas fa-map-marker-alt address-icon"></i>
-                            <input 
-                                type="text" 
-                                id="address" 
-                                name="address" 
-                                placeholder="Enter your property address"
-                                autocomplete="address-line1"
-                                required
-                                aria-describedby="address-help"
-                            >
-                        </div>
-                        <small id="address-help" class="form-help">Your address will not be shared with third parties.</small>
-                    </div>
-                </form>
+                    <button class="btn-primary" onclick="startTracking()">
+                        <span>Start Tracking</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
             </div>
             <div class="hero-image">
                 <div class="dashboard-mockup">
@@ -388,6 +350,8 @@
         </div>
     </section>
 
+    <!-- Footer Component -->
+    <div id="footer-container"></div>
 
     <!-- Component Loading Script -->
     <script src="components/components.js"></script>
@@ -406,115 +370,15 @@
             console.log('Event tracked:', eventName, properties);
         }
 
-        // Address input functionality
-        function initializeAddressInput() {
-            const addressInput = document.getElementById('address');
-            const trackingForm = document.getElementById('trackingForm');
-
-            if (addressInput && trackingForm) {
-                // Add focus/blur effects
-                addressInput.addEventListener('focus', function() {
-                    this.parentElement.classList.add('focused');
-                });
-
-                addressInput.addEventListener('blur', function() {
-                    if (!this.value.trim()) {
-                        this.parentElement.classList.remove('focused');
-                    }
-                });
-
-                // Handle form submission
-                trackingForm.addEventListener('submit', function(e) {
-                    e.preventDefault();
-                    const address = addressInput.value.trim();
-                    
-                    if (address) {
-                        // Track the form submission
-                        trackEvent('property_tracking_started', {
-                            address: address,
-                            page: 'my_property',
-                            section: 'hero'
-                        });
-                        
-                        // Show processing notification
-                        showNotification('Processing your request...', 'info');
-                        
-                        setTimeout(() => {
-                            // Redirect to instant valuation with the address
-                            window.location.href = 'instant-valuation.html?address=' + encodeURIComponent(address);
-                        }, 1500);
-                    } else {
-                        // Show error for empty address
-                        addressInput.classList.add('error');
-                        showNotification('Please enter a valid address', 'error');
-                    }
-                });
-
-                // Add input validation
-                addressInput.addEventListener('input', function() {
-                    const value = this.value.trim();
-                    if (value.length > 0) {
-                        this.classList.remove('error');
-                    }
-                });
-            }
-        }
-
-        // Notification system
-        function showNotification(message, type = 'info') {
-            // Create notification element
-            const notification = document.createElement('div');
-            notification.className = `notification notification-${type}`;
-            notification.innerHTML = `
-                <div class="notification-content">
-                    <i class="fas fa-${type === 'success' ? 'check-circle' : type === 'error' ? 'exclamation-circle' : 'info-circle'}"></i>
-                    <span>${message}</span>
-                </div>
-            `;
+        // Start tracking function
+        function startTracking() {
+            trackEvent('start_tracking_clicked', {
+                page: 'my_property',
+                section: 'hero'
+            });
             
-            // Add styles if not already present
-            if (!document.getElementById('notification-styles')) {
-                const style = document.createElement('style');
-                style.id = 'notification-styles';
-                style.textContent = `
-                    .notification {
-                        position: fixed;
-                        top: 20px;
-                        right: 20px;
-                        background: white;
-                        border-radius: 8px;
-                        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-                        padding: 1rem 1.5rem;
-                        z-index: 1000;
-                        transform: translateX(100%);
-                        transition: transform 0.3s ease;
-                    }
-                    .notification.show {
-                        transform: translateX(0);
-                    }
-                    .notification-content {
-                        display: flex;
-                        align-items: center;
-                        gap: 0.5rem;
-                    }
-                    .notification-success { border-left: 4px solid #10b981; }
-                    .notification-error { border-left: 4px solid #ef4444; }
-                    .notification-info { border-left: 4px solid #3b82f6; }
-                `;
-                document.head.appendChild(style);
-            }
-            
-            // Add to page
-            document.body.appendChild(notification);
-            
-            // Show notification
-            setTimeout(() => notification.classList.add('show'), 100);
-            
-            // Remove after 3 seconds
-            setTimeout(() => {
-                notification.classList.remove('show');
-                setTimeout(() => notification.remove(), 300);
-            }, 3000);
+            // Redirect to login/signup flow
+            window.location.href = '/auth/login?redirect=/my-property/dashboard';
         }
 
         // Book valuation function
@@ -558,9 +422,6 @@
             trackEvent('page_viewed', {
                 page: 'my_property'
             });
-
-            // Initialize address input
-            initializeAddressInput();
 
             // Add scroll animations
             const observerOptions = {
