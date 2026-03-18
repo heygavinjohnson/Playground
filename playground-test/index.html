@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Page</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <aside class="panel" aria-label="Controls">
+        <div class="panel__inner">
+            <h2 class="panel__title">Button style</h2>
+
+            <fieldset class="panel__group">
+                <legend class="panel__legend">Variant</legend>
+
+                <label class="panel__option">
+                    <input type="radio" name="variant" value="v1" checked />
+                    <span>Version 1</span>
+                </label>
+                <label class="panel__option">
+                    <input type="radio" name="variant" value="v2" />
+                    <span>Version 2</span>
+                </label>
+                <label class="panel__option">
+                    <input type="radio" name="variant" value="v3" />
+                    <span>Version 3</span>
+                </label>
+            </fieldset>
+
+            <label class="panel__toggle">
+                <span>Centered</span>
+                <input id="centeredToggle" type="checkbox" role="switch" aria-label="Centered" />
+            </label>
+        </div>
+    </aside>
+
+    <div class="fab-location right" id="fabLocation">
+        <button class="fab fab--v1" type="button" aria-label="Ask AI" id="fabButton">
+            <span class="span">
+                <svg xmlns="http://www.w3.org/2000/svg" class="CK__Icon--large" viewBox="0 0 22 22" aria-hidden="true"
+                    focusable="false">
+                    <defs>
+                        <radialGradient id="ck_background_primary_ai_radial_gradient" cx="0" cy="0" r="1"
+                            gradientUnits="userSpaceOnUse"
+                            gradientTransform="matrix(-29.2249 17.0096 -17.9641 -31.9142 24.671 0.986845)">
+                            <stop stop-color="#36A5D9"></stop>
+                            <stop offset="0.25" stop-color="#0078BD"></stop>
+                            <stop offset="0.55" stop-color="#8154AB"></stop>
+                            <stop offset="0.95" stop-color="#E4002B"></stop>
+                        </radialGradient>
+                    </defs>
+                    <path fill="url(#ck_background_primary_ai_radial_gradient)"
+                        d="M7.29343 4.31257C7.33237 4.16661 7.41945 4.03744 7.54104 3.94526C7.66264 3.85307 7.81191 3.80307 7.9655 3.80307C8.1191 3.80307 8.26836 3.85307 8.38996 3.94526C8.51156 4.03744 8.59863 4.16661 8.63757 4.31257C9.18875 6.3902 9.81403 7.74707 10.796 8.77178C11.7797 9.79922 13.1897 10.5618 15.4564 11.3126C15.5944 11.3581 15.7144 11.4451 15.7994 11.5612C15.8844 11.6773 15.9301 11.8167 15.9301 11.9597C15.9301 12.1027 15.8844 12.2421 15.7994 12.3581C15.7144 12.4742 15.5944 12.5612 15.4564 12.6067C13.1897 13.3566 11.7797 14.1201 10.796 15.1475C9.81403 16.1722 9.18875 17.5291 8.63757 19.6068C8.59863 19.7527 8.51156 19.8819 8.38996 19.9741C8.26836 20.0663 8.1191 20.1163 7.9655 20.1163C7.81191 20.1163 7.66264 20.0663 7.54104 19.9741C7.41945 19.8819 7.33237 19.7527 7.29343 19.6068C6.74133 17.5291 6.11697 16.1722 5.13504 15.1475C4.15033 14.1201 2.74135 13.3566 0.47364 12.6067C0.335647 12.5612 0.21569 12.4742 0.130705 12.3581C0.0457198 12.2421 0 12.1027 0 11.9597C0 11.8167 0.0457198 11.6773 0.130705 11.5612C0.21569 11.4451 0.335647 11.3581 0.47364 11.3126C2.74135 10.5618 4.15125 9.79922 5.13504 8.77178C6.11697 7.74707 6.74133 6.3902 7.29343 4.31257Z"
+                        class="AnimatedPath-sc-1x0zrbv-0 hhfSoF"></path>
+                    <path fill="url(#ck_background_primary_ai_radial_gradient)"
+                        d="M16.1938 0.509505C16.2327 0.363543 16.3198 0.234371 16.4414 0.142186C16.563 0.0500014 16.7123 0 16.8659 0C17.0195 0 17.1687 0.0500014 17.2903 0.142186C17.4119 0.234371 17.499 0.363543 17.5379 0.509505C17.8436 1.65798 18.1799 2.36326 18.682 2.88472C19.1878 3.40981 19.927 3.81933 21.1878 4.23522C21.3258 4.28073 21.4457 4.36768 21.5307 4.48377C21.6157 4.59987 21.6614 4.73926 21.6614 4.88226C21.6614 5.02526 21.6157 5.16465 21.5307 5.28075C21.4457 5.39684 21.3258 5.48379 21.1878 5.5293C19.9279 5.94519 19.1868 6.35471 18.682 6.8798C18.1799 7.40217 17.8446 8.10654 17.5379 9.25502C17.4987 9.40058 17.4116 9.52931 17.2901 9.62115C17.1686 9.71299 17.0196 9.76279 16.8663 9.76279C16.7131 9.76279 16.5641 9.71299 16.4426 9.62115C16.3211 9.52931 16.234 9.40058 16.1947 9.25502C15.8881 8.10654 15.5518 7.40217 15.0498 6.8798C14.5449 6.35471 13.8048 5.94519 12.544 5.5293C12.406 5.48379 12.286 5.39684 12.2011 5.28075C12.1161 5.16465 12.0703 5.02526 12.0703 4.88226C12.0703 4.73926 12.1161 4.59987 12.2011 4.48377C12.286 4.36768 12.406 4.28073 12.544 4.23522C13.8048 3.81933 14.5449 3.40981 15.0498 2.88563C15.5518 2.36326 15.8881 1.65616 16.1938 0.509505Z"
+                        class="AnimatedPath-sc-1x0zrbv-0 hhfSoF"></path>
+                    <path fill="url(#ck_background_primary_ai_radial_gradient)"
+                        d="M18.2707 14.5468C18.1176 14.5467 17.9688 14.5962 17.8474 14.6877C17.726 14.7792 17.6387 14.9075 17.5991 15.0528C17.3768 15.8718 17.1387 16.3459 16.7996 16.6908C16.4569 17.0403 15.9418 17.326 15.0183 17.6245C14.8793 17.6694 14.7582 17.7563 14.6724 17.8727C14.5866 17.9891 14.5404 18.1292 14.5404 18.2729C14.5404 18.4167 14.5866 18.5568 14.6724 18.6732C14.7582 18.7896 14.8793 18.8765 15.0183 18.9214C15.9418 19.2189 16.4569 19.5047 16.7996 19.8541C17.1387 20.2 17.3768 20.6732 17.5991 21.4922C17.6383 21.6378 17.7255 21.7665 17.8469 21.8584C17.9684 21.9502 18.1174 22 18.2707 22C18.424 22 18.573 21.9502 18.6944 21.8584C18.8159 21.7665 18.903 21.6378 18.9423 21.4922C19.1646 20.6732 19.4018 20.2 19.7408 19.8541C20.0836 19.5047 20.5986 19.2189 21.5222 18.9214C21.6612 18.8765 21.7822 18.7896 21.868 18.6732C21.9538 18.5568 22 18.4167 22 18.2729C22 18.1292 21.9538 17.9891 21.868 17.8727C21.7822 17.7563 21.6612 17.6694 21.5222 17.6245C20.5986 17.326 20.0836 17.0403 19.7408 16.6908C19.4018 16.3459 19.1646 15.8718 18.9414 15.0528C18.9018 14.9077 18.8147 14.7795 18.6934 14.688C18.5722 14.5965 18.4236 14.5469 18.2707 14.5468Z"
+                        class="AnimatedPath-sc-1x0zrbv-0 hhfSoF"></path>
+                </svg>
+                Ask AI
+            </span>
+        </button>
+    </div>
+
+    <script>
+        const locationEl = document.getElementById("fabLocation");
+        const buttonEl = document.getElementById("fabButton");
+        const centeredToggle = document.getElementById("centeredToggle");
+
+        function setVariant(next) {
+            buttonEl.classList.remove("fab--v1", "fab--v2", "fab--v3");
+            buttonEl.classList.add(`fab--${next}`);
+        }
+
+        function setCentered(isCentered) {
+            locationEl.classList.toggle("centered", isCentered);
+            locationEl.classList.toggle("right", !isCentered);
+        }
+
+        document.querySelectorAll('input[name="variant"]').forEach((el) => {
+            el.addEventListener("change", (e) => {
+                setVariant(e.target.value);
+            });
+        });
+
+        centeredToggle.addEventListener("change", (e) => {
+            setCentered(e.target.checked);
+        });
+
+        setVariant("v1");
+        setCentered(centeredToggle.checked);
+    </script>
+</body>
+
+</html>
